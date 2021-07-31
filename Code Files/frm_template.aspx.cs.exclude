@@ -1,0 +1,127 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class frm_template : System.Web.UI.Page
+{
+    Int16 i = 1;
+    TextBox txt = new TextBox();
+    Button btn = new Button();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            Session["a"] = "";
+        }
+        txt.ID = i.ToString();
+        txt.Width = 32;
+        pnlsection.Controls.Add(txt);
+
+        btn.ID = (i + 1).ToString();
+        btn.Text = "ok";
+        btn.Click += new EventHandler(btn_Click);
+        pnlsection.Controls.Add(btn);
+
+        Literal lt = new Literal();
+        lt.Text = "<br />";
+        pnlsection.Controls.Add(lt);
+
+    }
+    protected void btn_Click(object sender, EventArgs e)
+    {
+        Int16 j = 0;// Convert.ToInt16(Convert.ToInt16(txt.Text) * 2);
+        
+        if (Session["a"] == "")
+        {
+            foreach (Control c in pnlsection.Controls)
+            {
+                if (c is TextBox)
+                {
+                    TextBox txt = (TextBox)c;
+                    j = Convert.ToInt16(txt.Text);
+                    j *= 2;
+                    Session["a"] = j;
+                }
+                
+            }
+
+            for (i = 0; i < j; i++)
+            {
+                TextBox txt = new TextBox();
+                txt.ID = i.ToString();
+                txt.Width = 32;
+                pnlsection.Controls.Add(txt);
+                if (Convert.ToInt64(i) % 2 == 0)
+                {
+                    Label lbl = new Label();
+                    lbl.ID = i.ToString();
+                    pnlsection.Controls.Add(lbl);
+                    lbl.Text = "Questions";
+
+                    Button btn = new Button();
+                    btn.ID = i.ToString();
+                    btn.Text = "ok";
+                    btn.Click += new EventHandler(btn_Click);
+                    pnlsection.Controls.Add(btn);
+                }
+                else
+                {
+                    Label lbl = new Label();
+                    lbl.ID = i.ToString();
+                    pnlsection.Controls.Add(lbl);
+                    lbl.Text = "Marks";
+                }
+                Literal lt = new Literal();
+                lt.Text = "<br />";
+                pnlsection.Controls.Add(lt);
+            }
+          
+        }
+        else
+        {
+            Response.Write("hii");
+
+
+            j = Convert.ToInt16(Session["a"]);
+
+
+                for (i = 0; i < j; i++)
+                {
+                    TextBox txt = new TextBox();
+                    txt.ID = i.ToString();
+                    txt.Width = 32;
+                    pnlsection.Controls.Add(txt);
+                    if (Convert.ToInt64(i) % 2 == 0)
+                    {
+                        Label lbl = new Label();
+                        lbl.ID = i.ToString();
+                        pnlsection.Controls.Add(lbl);
+                        lbl.Text = "Questions";
+
+                        Button btn = new Button();
+                        btn.ID = i.ToString();
+                        btn.Text = "ok";
+                        btn.Click += new EventHandler(btn_Click);
+                        pnlsection.Controls.Add(btn);
+                    }
+                    else
+                    {
+                        Label lbl = new Label();
+                        lbl.ID = i.ToString();
+                        pnlsection.Controls.Add(lbl);
+                        lbl.Text = "Marks";
+                    }
+                    Literal lt = new Literal();
+                    lt.Text = "<br />";
+                    pnlsection.Controls.Add(lt);
+                }
+               
+                
+            }
+        
+    }
+
+}

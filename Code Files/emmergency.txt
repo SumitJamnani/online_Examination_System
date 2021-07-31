@@ -1,0 +1,8 @@
+alter database [online] set emergency
+alter database [online] set single_user with rollback immediate
+
+DBCC CheckDB([online],REPAIR_ALLOW_DATA_LOSS)
+
+ALTER DATABASE [online] SET MULTI_USER WITH ROLLBACK IMMEDIATE
+
+ALTER DATABASE [online] SET ONLINE

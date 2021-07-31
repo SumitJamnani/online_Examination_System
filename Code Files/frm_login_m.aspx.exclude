@@ -1,0 +1,91 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="frm_login_m.aspx.cs" Inherits="frmlogin_m" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .style1
+        {
+            width: 279px;
+            margin-left: 40px;
+        }
+        .style2
+        {
+            width: 186px;
+        }
+        .style3
+        {
+            width: 279px;
+            margin-left: 40px;
+            height: 23px;
+        }
+        .style4
+        {
+            width: 186px;
+            height: 23px;
+        }
+        .style5
+        {
+            height: 23px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+    <center>
+    <table style="width:100%;">
+        <tr>
+            <td class="style1">
+                Email</td>
+            <td class="style2">
+                :</td>
+            <td>
+                <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="txtemail" ErrorMessage="Email Required" ForeColor="#CC0000" ValidationGroup="submit1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td class="style1">
+                Password</td>
+            <td class="style2">
+                :</td>
+            <td>
+                <asp:TextBox ID="txtpassword" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="txtpassword" ErrorMessage="Password Required" 
+                    ForeColor="#CC0000" ValidationGroup="submit1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>        
+                <td class="style2">
+                <br />
+                <asp:Button ID="btnlogin" runat="server" onclick="btnlogin_Click" Text="Login" ValidationGroup="submit1"/>
+                <asp:Button ID="btncancle" runat="server" Text="Cancle" onclick="btncancle_Click" />
+                <br />
+                <asp:Button ID="btnupdate" runat="server" Text="Update" />
+                <asp:Button ID="btndelete" runat="server" Text="Delete" onclick="btndelete_Click" />
+                </td>
+            
+        </tr>
+    </table>
+   
+        <asp:GridView ID="Grdlogin"  AutoGenerateColumns="false" runat="server" OnRowCommand="grdlogin_RowCommand">
+        <Columns>
+           
+              <asp:TemplateField HeaderText="Login Records">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LinkButton1" runat="server"  Text="<%#Bind('[Email]') %>"
+                                    CommandName="Email" CommandArgument='<%#Bind("[Email]") %>'>
+                                </asp:LinkButton>
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
+                      
+            <asp:BoundField DataField="Email" HeaderText="Email" />        
+            
+          <asp:BoundField DataField="Password" HeaderText="Password" />        
+        </Columns>
+        </asp:GridView>
+        <asp:HiddenField ID="hdnemail" runat="server" />
+    </center>
+</asp:Content>
+

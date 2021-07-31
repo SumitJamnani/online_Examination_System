@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DEV_OES_Project", ".", "{84C8E40B-3BCA-45FF-BAE2-A300ED026328}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/DEV_OES_Project"
+		Debug.AspNetCompiler.PhysicalPath = "..\DEV_OES_Project\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\DEV_OES_Project\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/DEV_OES_Project"
+		Release.AspNetCompiler.PhysicalPath = "..\DEV_OES_Project\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\DEV_OES_Project\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50355"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84C8E40B-3BCA-45FF-BAE2-A300ED026328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C8E40B-3BCA-45FF-BAE2-A300ED026328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPagelogin.master.cs"
+    Inherits="MasterPagelogin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+   <script type="text/javascript">
+       function FullScreenMode() {
+           var win = window.open("", "full", "dependent=yes, fullscreen=yes");
+           win.location = window.location.href;
+           window.opener = null;
+       }
+    </script>
+    <script language="javascript">
+
+        
+
+        // disable right click 
+        if (document.layers) {
+            document.captureEvents(Event.MOUSEDOWN);
+            document.onmousedown = function () {
+                return false;
+            };
+        }
+
+        else {
+            document.onmouseup = function (e) {
+                if (e != null && e.type == "mouseup") {
+                    if (e.which == 2 || e.which == 3) {
+                        return false;
+                    }
+                }
+            };
+
+        }
+
+
+        document.oncontextmenu = function () {
+            return false;
+        };
+
+
+        document.onkeydown = ShowKeyCode;
+
+
+        function ShowKeyCode(evt) {
+            if (evt.keyCode == '123')
+                return false;
+        }
+    
+    </script>
+
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+        name='viewport'>
+    <!-- bootstrap 3.0.2 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bg-black" onload="FullScreenMode()" >
+    <div class="form-box" id="login-box">
+        <div class="header">
+            Sign In</div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

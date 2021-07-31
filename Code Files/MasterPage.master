@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <title>Online Exam</title>
+    <%--  <script type="text/javascript">
+        function FullScreenMode() {
+            var win = window.open("", "full", "dependent=yes, fullscreen=yes");
+            win.location = window.location.href;
+            window.opener = null;
+        }
+    </script>--%>
+    <%--   <script type="text/javascript">
+        function max() {
+            var obj = new ActiveXObject("Wscript.shell");
+            obj.SendKeys("{f11}");
+        }    
+    </script>--%>
+    <script language="javascript">
+        function FullScreen() {
+            top.resizeTo(window.screen.availWidth, window.screen.availHeight);
+            top.moveTo(0, 0);
+
+        }
+
+        // disable right click 
+        if (document.layers) {
+            document.captureEvents(Event.MOUSEDOWN);
+            document.onmousedown = function () {
+                return false;
+            };
+        }
+
+        else {
+            document.onmouseup = function (e) {
+                if (e != null && e.type == "mouseup") {
+                    if (e.which == 2 || e.which == 3) {
+                        return false;
+                    }
+                }
+            };
+
+        }
+
+
+        document.oncontextmenu = function () {
+            return false;
+        };
+
+
+        document.onkeydown = ShowKeyCode;
+
+
+        function ShowKeyCode(evt) {
+            if (evt.keyCode == '123')
+                return false;
+        }
+
+    </script>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+        name='viewport'>
+    <!-- bootstrap 3.0.2 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="skin-black">
+    <header class="header"></header>
+    <form id="form1" runat="server">
+    <section class="container invoice">
+       
+        <div class="col-xs-2">
+            <asp:Image ID="imglogo" runat="server" Height="115px" ImageUrl="~/logo/LJCCA2.png" 
+                                    Width="106px" ></asp:Image>
+        </div>
+        <div class="col-xs-8">
+        <div class="col-xs-10">
+            <div class="text-center" style="font-size:x-large; font-family:Arial;" >
+                L.J. College Of Computer Application
+            </div>
+            <div class="btn-sm">
+            </div>
+            <div class="btn-sm">
+                <div class="col-xs-6 btn-sm pull-left text-center">
+            Name : <asp:Label ID="lblname" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="col-xs-4 btn-sm pull-left text-center">
+            Semester : <asp:Label ID="lblsem" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+
+            <div class="btn-sm">
+                <div class="col-xs-6 btn-sm pull-left text-center">
+            Division : <asp:Label ID="lbldiv" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="col-xs-4 btn-sm pull-left text-center">
+            Roll No. : <asp:Label ID="lblrollno" runat="server" Text=""></asp:Label>
+                </div>
+            </div>            
+        </div>
+        
+        <div class="col-xs-2">
+        <div class="btn-sm"></div>
+        <div class="btn-sm">
+            <asp:Image ID="Image1" runat="server" Height="85px" Width="80px" 
+                ImageUrl="~/images/img.jpg" ></asp:Image>
+        </div>
+        </div>
+        </div>
+        <div class="col-xs-2 btn-sm">
+            <div class="pull-right btn-sm">
+               <asp:Button ID="btnlogout" runat="server" Text="Logout" CssClass="btn btn-primary btn-sm" onclick="btnlogout_Click"  />
+            </div>
+            <div class="pull-right btn-sm">
+                 <small class="pull-right time-label">Date : <asp:Label ID="lbldate" runat="server" Text=""></asp:Label></small> 
+            </div>
+        </div>
+    
+               
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+       
+        </asp:ContentPlaceHolder>
+              
+</section>
+    </form>
+</body>
+</html>

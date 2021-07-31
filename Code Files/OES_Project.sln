@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "OES_Project", ".", "{73BE0E04-6982-4DA2-BCFB-7B83BFCE1983}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/OES_Project"
+		Debug.AspNetCompiler.PhysicalPath = "..\OES_Project\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\OES_Project\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/OES_Project"
+		Release.AspNetCompiler.PhysicalPath = "..\OES_Project\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\OES_Project\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50101"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{2934DE67-E1A2-4DB2-A9D4-D8EA59886D3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{76CD1F60-38C4-4C4B-BFB2-B24704433031}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{DB9F3484-20BA-4BAA-BDCB-5A81295C4080}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73BE0E04-6982-4DA2-BCFB-7B83BFCE1983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73BE0E04-6982-4DA2-BCFB-7B83BFCE1983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76CD1F60-38C4-4C4B-BFB2-B24704433031} = {2934DE67-E1A2-4DB2-A9D4-D8EA59886D3F}
+		{DB9F3484-20BA-4BAA-BDCB-5A81295C4080} = {76CD1F60-38C4-4C4B-BFB2-B24704433031}
+	EndGlobalSection
+EndGlobal
